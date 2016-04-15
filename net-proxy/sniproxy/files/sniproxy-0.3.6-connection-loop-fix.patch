@@ -1,0 +1,51 @@
+diff --git a/src/connection.c b/src/connection.c
+index 7aadf16..d6f0a46 100644
+--- a/src/connection.c
++++ b/src/connection.c
+@@ -433,6 +433,7 @@ resolv_cb(struct Address *result, void *data) {
+     struct resolv_cb_data *cb_data = (struct resolv_cb_data *)data;
+     struct Connection *con = cb_data->connection;
+     struct ev_loop *loop = cb_data->loop;
++    char server_address[128];
+ 
+     if (con->state != RESOLVING) {
+         info("resolv_cb() called for connection not in RESOLVING state");
+@@ -453,9 +454,22 @@ resolv_cb(struct Address *result, void *data) {
+         assert(con->server.addr_len <= sizeof(con->server.addr));
+         memcpy(&con->server.addr, address_sa(result), con->server.addr_len);
+ 
+-        con->state = RESOLVED;
++        if (memcmp(address_sa(con->listener->address), &con->server.addr,
++                    (address_sa_len(con->listener->address) < con->server.addr_len) ?
++                        address_sa_len(con->listener->address) : con->server.addr_len) == 0) {
++                    
++            notice("hostname %s resolved to proxy address. abort.", address_hostname(cb_data->address)); 
++            abort_connection(con);
+ 
+-        initiate_server_connect(con, loop);
++        } else {
++            
++            display_sockaddr(&con->server.addr, server_address, sizeof(server_address));
++            debug("hostname %s resolved to %s", address_hostname(cb_data->address), server_address);
++
++            con->state = RESOLVED;
++
++            initiate_server_connect(con, loop);
++        }
+     }
+ 
+     con->query_handle = NULL;
+diff --git a/src/resolv.c b/src/resolv.c
+index 48c2aad..bcb49b3 100644
+--- a/src/resolv.c
++++ b/src/resolv.c
+@@ -189,7 +189,8 @@ dns_query_cb(struct dns_ctx *ctx, struct dns_rr_a4 *result, void *data) {
+         address = new_address_sa((struct sockaddr *)&sa, sizeof(sa));
+         if (address == NULL)
+             err("Failed to allocate memory for DNS query result address");
+-    }
++    } else debug("No IP addresses in DNS answer");
++    
+ 
+     cb_data->client_cb(address, cb_data->client_cb_data);
+ 

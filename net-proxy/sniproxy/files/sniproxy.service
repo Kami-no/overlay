@@ -1,0 +1,12 @@
+[Unit]
+Description=TCP proxy for HTTPS traffic with routing based on SNI
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/sbin/sniproxy -f -c /etc/sniproxy.conf
+PIDFile=/run/sniproxy.pid
+
+[Install]
+WantedBy=multi-user.target
