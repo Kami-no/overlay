@@ -20,8 +20,8 @@ KEYWORDS="~amd64 ~x86"
 IUSE="cyberfilter systemd"
 
 RDEPEND=">=net-libs/udns-0.4
-	 dev-libs/libev
-	 dev-libs/libpcre"
+	dev-libs/libev
+	dev-libs/libpcre"
 DEPEND="${RDEPEND}"
 
 src_prepare() {
@@ -32,18 +32,18 @@ src_prepare() {
 src_install() {
 
 	default_src_install
-	
-    insinto /etc/
-    newinitd "${FILESDIR}/sniproxy.initd" sniproxy
 
-    if use systemd ; then
-        systemd_dounit "${FILESDIR}/sniproxy.service"
+	insinto /etc/
+	newinitd "${FILESDIR}/sniproxy.initd" sniproxy
+
+	if use systemd ; then
+		systemd_dounit "${FILESDIR}/sniproxy.service"
 	fi
 
 	if use cyberfilter ; then
-	    doins "${FILESDIR}/sniproxy.conf"
+		doins "${FILESDIR}/sniproxy.conf"
 	else
-	    doins "${S}/sniproxy.conf"
+		doins "${S}/sniproxy.conf"
 	fi;
 
 	fperms 0644 /etc/sniproxy.conf

@@ -27,5 +27,5 @@ src_install() {
 
 pkg_postinst()
 {
-    glib-compile-schemas /usr/share/glib-2.0/schemas/
+	glib-compile-schemas /usr/share/glib-2.0/schemas/
 }
