@@ -1,0 +1,51 @@
+#!/sbin/openrc-run
+# Distributed under the terms of the GNU General Public License, v2 or later
+
+MADSONIC_HOME=${MADSONIC_HOME:-/var/lib/${SVCNAME}}
+MADSONIC_USER=${MADSONIC_USER:-${SVCNAME}}
+PIDFILE=/run/madsonic/madsonic.pid
+
+depend() {
+	after net
+}
+
+start() {
+	checkpath -dq -o madsonic:madsonic -m 755 /run/madsonic/
+
+	ebegin "Starting ${SVCNAME}"
+	start-stop-daemon \
+		--start --user "${MADSONIC_USER}" --name madsonic \
+		--env HOME="${MADSONIC_HOME}" --exec /usr/bin/madsonic \
+		--pidfile="${PIDFILE}" \
+		--nicelevel "${NICELEVEL}" \
+		-- \
+		--home="${MADSONIC_HOME}" \
+		--host="${MADSONIC_HOST}" \
+		--port="${MADSONIC_PORT}" \
+		--https-port="${MADSONIC_HTTPS_PORT}" \
+		--context-path="${MADSONIC_CONTEXT_PATH}" \
+		--init-memory=192
+		--max-memory="${MADSONIC_MAX_MEMORY}" \
+		--default-music-folder="${MADSONIC_DEFAULT_MUSIC_FOLDER}" \
+		--default-upload-folder="${MADSONIC_DEFAULT_UPLOAD_FOLDER}" \
+		--default-podcast-folder="${MADSONIC_DEFAULT_PODCAST_FOLDER}" \
+		--default-playlist-import-folder="${MADSONIC_DEFAULT_PLAYLIST_IMPORT_FOLDER}" \
+		--default-playlist-export-folder="${MADSONIC_DEFAULT_PLAYLIST_EXPORT_FOLDER}" \
+		--default-playlist-backup-folder="${MADSONIC_DEFAULT_PLAYLIST_BACKUP_FOLDER}" \
+		--default-transcode-folder="${MADSONIC_DEFAULT_TRANSCODE_FOLDER}" \
+		--timezone="${MADSONIC_DEFAULT_TIMEZONE}" \
+		--update=false \
+		--gzip="${MADSONIC_GZIP}" \
+		--pidfile="${PIDFILE}" --quiet \
+		${SUBSONIC_OPTS}
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping ${SVCNAME}"
+	start-stop-daemon --stop --user "${MADSONIC_USER}" \
+		--pidfile "${PIDFILE}" \
+		--wait 15000 \
+		--progress
+	eend $?
+}
