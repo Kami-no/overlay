@@ -42,7 +42,7 @@ MADSONIC_DEFAULT_PLAYLIST_EXPORT_FOLDER=/var/media/playlists/export
 MADSONIC_DEFAULT_PLAYLIST_BACKUP_FOLDER=/var/media/playlists/backup
 
 # Configure Madsonic to use this folder for transcoder.
-MADSONIC_DEFAULT_TRANSCODE_FOLDER=
+MADSONIC_DEFAULT_TRANSCODE_FOLDER=/var/lib/madsonic/transcode
 
 # Configure Madsonic to use other timezone for time correction
 # Example 'Europe/Vienna', 'US/Central', 'America/New_York'"
