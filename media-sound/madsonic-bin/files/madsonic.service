@@ -25,6 +25,7 @@ ExecStart=/usr/bin/madsonic \
 	--timezone=${MADSONIC_DEFAULT_TIMEZONE} \
 	--gzip=${MADSONIC_GZIP}
 PIDFile=/run/madsonic/madsonic.pid
+PrivateTmp=true
 
 [Install]
 WantedBy=multi-user.target
