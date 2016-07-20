@@ -17,7 +17,7 @@ A media library management system for obsessive-compulsive music geeks. CLI-only
 ### Subsonic
 Subsonic is a complete, personal media streaming solution. Has premium features with subscription. http://www.subsonic.org/pages/index.jsp
 ### Madsonic
-Fork of Subsinic. Has more features but less intuitive interface. Has premium features with subscription, but you can get a free key at the developer's forum. http://beta.madsonic.org/pages/index.jsp
+Fork of Subsinic. Has more features but less intuitive interface. Has premium features with subscription, but you can get the key for free at the developer's forum. http://beta.madsonic.org/pages/index.jsp
 
 Extra dependancies:
 - **xmp** - Extended Module Player - used for transcoding http://xmp.sourceforge.net/;
