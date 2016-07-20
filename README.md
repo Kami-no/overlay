@@ -25,7 +25,7 @@ Extra dependancies:
 
 ## Net
 ### ocserv
-Free server for Cisco AnyConnect. http://www.infradead.org/ocserv/
+Free server for Cisco AnyConnect VPN. http://www.infradead.org/ocserv/
 ### sniproxy
 Proxies incoming HTTP and TLS connections based on the hostname contained in the initial request of the TCP session. https://github.com/dlundquist/sniproxy
 
