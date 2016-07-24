@@ -17,7 +17,7 @@ auto-sync = yes
 
 ### Music
 #### beets
-A media library management system for obsessive-compulsive music geeks. CLI-only. http://beets.radbox.org/
+The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music. CLI-only. http://beets.radbox.org/
 #### Subsonic
 Subsonic is a complete, personal media streaming solution. Has premium features with subscription. http://www.subsonic.org/pages/index.jsp
 #### Madsonic
@@ -29,9 +29,9 @@ Extra dependancies:
 
 ### Net
 #### ocserv
-Free server for Cisco AnyConnect VPN. http://www.infradead.org/ocserv/
+OpenConnect server (ocserv) is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it. The server is implemented primarily for the GNU/Linux platform but its code is designed to be portable to other UNIX variants as well. http://www.infradead.org/ocserv/
 #### sniproxy
-Proxies incoming HTTP and TLS connections based on the hostname contained in the initial request of the TCP session. https://github.com/dlundquist/sniproxy
+Proxies incoming HTTP and TLS connections based on the hostname contained in the initial request of the TCP session. This enables HTTPS name-based virtual hosting to separate backend servers without installing the private key on the proxy machine. https://github.com/dlundquist/sniproxy
 
 ### Misc
 #### terminix
