@@ -11,11 +11,11 @@ MY_PN="${PN//-bin}"
 DESCRIPTION="Madsonic is a complete, personal media streaming solution"
 HOMEPAGE="http://www.madsonic.org/"
 #SRC_URI="http://subsonic.org/download/${MY_PN}-${PV}-standalone.tar.gz"
-SRC_URI="http://madsonic.org/download/6.1/20160706_madsonic-6.1.8520-standalone.tar.gz -> madsonic-6.1.8520-standalone.tar.gz"
+SRC_URI="http://madsonic.org/download/6.1/20160915_madsonic-6.1.8700-standalone.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 IUSE="ffmpeg lame systemd xmp"
 
 DEPEND=""

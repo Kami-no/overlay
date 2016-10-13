@@ -11,7 +11,7 @@ MY_PN="${PN//-bin}"
 DESCRIPTION="Madsonic is a complete, personal media streaming solution"
 HOMEPAGE="http://www.madsonic.org/"
 #SRC_URI="http://subsonic.org/download/${MY_PN}-${PV}-standalone.tar.gz"
-SRC_URI="http://madsonic.org/download/6.1/20160827_madsonic-6.1.8660-standalone.tar.gz"
+SRC_URI="http://madsonic.org/download/6.1/20161001_madsonic-6.1.8740-standalone.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
