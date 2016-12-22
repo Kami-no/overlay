@@ -23,6 +23,7 @@ Extra dependancies:
 - **discogs-client** - official Python API client for Discogs;
 - **munkres** - python module implementing munkres algorithm for the Assignment Problem;
 - **pyacoustid** - python module for Chromaprint acoustic fingerprinting and the Acoustid API.
+
 #### Subsonic
 Subsonic is a complete, personal media streaming solution. Has premium features with subscription. http://www.subsonic.org/pages/index.jsp
 #### Madsonic
