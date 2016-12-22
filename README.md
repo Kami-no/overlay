@@ -18,6 +18,11 @@ auto-sync = yes
 ### Music
 #### beets
 The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music. CLI-only. http://beets.radbox.org/
+
+Extra dependancies:
+- **discogs-client** - official Python API client for Discogs;
+- **munkres** - python module implementing munkres algorithm for the Assignment Problem;
+- **pyacoustid** - python module for Chromaprint acoustic fingerprinting and the Acoustid API.
 #### Subsonic
 Subsonic is a complete, personal media streaming solution. Has premium features with subscription. http://www.subsonic.org/pages/index.jsp
 #### Madsonic
