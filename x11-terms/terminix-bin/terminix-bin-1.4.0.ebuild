@@ -15,6 +15,13 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror"
 
+IUSE="gnome-keyring"
+
+DEPEND=""
+RDEPEND="
+	gnome-keyring? ( app-crypt/libsecret )
+	gnome-keyring? ( gnome-base/gnome-keyring )"
+
 S=${WORKDIR}
 
 src_install() {
