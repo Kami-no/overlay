@@ -7,7 +7,7 @@ Small personal overlay to sync rare ebuilds.
 
 ```
 [kami-no]
-location = /var/lib/portage/repos/kami-no/
+location = /var/lib/portage/repos/kami-no
 sync-type = git
 sync-uri = https://github.com/Kami-no/overlay.git
 auto-sync = yes
