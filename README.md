@@ -40,8 +40,8 @@ OpenConnect server (ocserv) is an SSL VPN server. Its purpose is to be a secure,
 Proxies incoming HTTP and TLS connections based on the hostname contained in the initial request of the TCP session. This enables HTTPS name-based virtual hosting to separate backend servers without installing the private key on the proxy machine. https://github.com/dlundquist/sniproxy
 
 ### Misc
-#### terminix
-A tiling terminal emulator for Linux using GTK+ 3. https://github.com/gnunn1/terminix
+#### tilix (ex terminix)
+A tiling terminal emulator for Linux using GTK+ 3. https://github.com/gnunn1/tilix
 
 ### Abandoned
 - pf-sources

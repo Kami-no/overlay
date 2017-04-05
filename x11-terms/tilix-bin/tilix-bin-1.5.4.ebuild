@@ -7,8 +7,8 @@ EAPI=5
 inherit eutils
 
 DESCRIPTION="A tiling terminal emulator for Linux using GTK+ 3"
-HOMEPAGE="https://github.com/gnunn1/terminix"
-SRC_URI="https://github.com/gnunn1/terminix/releases/download/$PV/terminix.zip -> terminix-bin-$PV.zip"
+HOMEPAGE="https://github.com/gnunn1/tilix"
+SRC_URI="https://github.com/gnunn1/tilix/releases/download/$PV/tilix.zip -> tilix-bin-$PV.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -29,7 +29,7 @@ src_install() {
 	doins -r usr/share || die
 
 	into /usr
-	dobin usr/bin/terminix || die
+	dobin usr/bin/tilix || die
 }
 
 pkg_postinst()
