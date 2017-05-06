@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-inherit git-2 eutils autotools
+inherit git-2 eutils autotools systemd
 
 EGIT_REPO_URI="https://github.com/dlundquist/sniproxy.git"
 EGIT_COMMIT=$PV
@@ -17,7 +17,7 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="cyberfilter"
+IUSE="cyberfilter systemd"
 
 RDEPEND=">=net-libs/udns-0.4
 	dev-libs/libev
@@ -25,8 +25,6 @@ RDEPEND=">=net-libs/udns-0.4
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	epatch "${FILESDIR}/${P}-connection-loop-fix.patch"
-	
 	eautoreconf --install
 	eautomake --add-missing --copy
 }
@@ -38,6 +36,9 @@ src_install() {
 	insinto /etc/
 	newinitd "${FILESDIR}/sniproxy.initd" sniproxy
 
+	if use systemd ; then
+		systemd_dounit "${FILESDIR}/sniproxy.service"
+	fi
 
 	if use cyberfilter ; then
 		doins "${FILESDIR}/sniproxy.conf"
