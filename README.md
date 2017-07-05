@@ -15,6 +15,10 @@ auto-sync = yes
 
 ## Packages
 
+### Monitoring
+#### Prometheus Alertmanager
+The Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integrations such as email, PagerDuty, or OpsGenie. It also takes care of silencing and inhibition of alerts. https://github.com/prometheus/alertmanager
+
 ### Music
 #### beets
 The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music. CLI-only. http://beets.radbox.org/
