@@ -18,6 +18,8 @@ auto-sync = yes
 ### Monitoring
 #### Prometheus Alertmanager
 The Alertmanager handles alerts sent by client applications such as the Prometheus server. It takes care of deduplicating, grouping, and routing them to the correct receiver integrations such as email, PagerDuty, or OpsGenie. It also takes care of silencing and inhibition of alerts. https://github.com/prometheus/alertmanager
+#### Prometheus Blackbox exporter
+The blackbox exporter allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP and ICMP. https://github.com/prometheus/blackbox_exporter
 
 ### Music
 #### beets
