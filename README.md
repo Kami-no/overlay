@@ -1,5 +1,5 @@
 # Gentoo Overlay
-Small personal overlay to sync rare ebuilds.
+Small personal overlay to sync rare and custom ebuilds.
 
 ## Installation
 
