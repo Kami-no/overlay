@@ -18,7 +18,7 @@ IUSE=""
 
 DEPEND=">=dev-lang/go-1.5"
 
-EXPORTER_USER=prometheus
+EXPORTER_USER=prometheus-exporter
 
 MY_P="${P##prometheus-}"
 S="${WORKDIR}/${MY_P}/src/${EGO_PN}"
@@ -47,8 +47,7 @@ src_install() {
 	keepdir /var/lib/prometheus/"${MY_PN}" /var/log/prometheus
 	fowners "${EXPORTER_USER}" /var/lib/prometheus/"${MY_PN}" /var/log/prometheus
 
-	insinto /etc/prometheus
-	doins "blackbox.yml"
+	insinto /etc/prometheus blackbox.yml
 
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
