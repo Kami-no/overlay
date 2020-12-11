@@ -22,9 +22,6 @@ The Alertmanager handles alerts sent by client applications such as the Promethe
 The blackbox exporter allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP and ICMP. https://github.com/prometheus/blackbox_exporter
 
 ### Music
-#### beets
-The purpose of beets is to get your music collection right once and for all. It catalogs your collection, automatically improving its metadata as it goes using the MusicBrainz database. Then it provides a bouquet of tools for manipulating and accessing your music. CLI-only. http://beets.radbox.org/
-
 #### Subsonic
 Subsonic is a complete, personal media streaming solution. Has premium features with subscription. http://www.subsonic.org/pages/index.jsp
 #### Madsonic
