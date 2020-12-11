@@ -30,8 +30,6 @@ Forked from Subsinic. Has more features but less intuitive interface. Has premiu
 ### Net
 #### gobetween
 Modern & minimalistic load balancer for the Cloud era http://gobetween.io/
-#### ocserv
-OpenConnect server (ocserv) is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it. The server is implemented primarily for the GNU/Linux platform but its code is designed to be portable to other UNIX variants as well. http://www.infradead.org/ocserv/
 
 ### Misc
 #### tilix (ex terminix)
