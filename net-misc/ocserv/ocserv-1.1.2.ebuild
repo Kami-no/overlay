@@ -8,7 +8,7 @@ inherit eutils systemd
 
 DESCRIPTION="Free server for AnyConnect"
 HOMEPAGE="http://www.infradead.org/ocserv/"
-SRC_URI="ftp://ftp.infradead.org/pub/ocserv/ocserv-$PV.tar.xz"
+SRC_URI="ftp://ftp.infradead.org/pub/ocserv/${PF}.tar.xz -> ${PF}.tar.xz"
 
 LICENSE="GPL-2"
 SLOT="0"
