@@ -6,8 +6,9 @@ DESCRIPTION="Modern & minimalistic load balancer for the Cloud era"
 HOMEPAGE="http://gobetween.io/"
 
 APP_PKG="${PN}_${PV}_linux_amd64"
-#SRC_URI="https://github.com/yyyar/${PN}/releases/download/${PV}/${APP_PKG}.tar.gz"
+#SRC_URI="https://github.com/yyyar/${PN}/releases/download/${PV}/${APP_PKG}.tar.gz -> ${PN}-${PV}.tar.gz"
 SRC_URI="https://github.com/yyyar/${PN}/archive/${PV}.tar.gz -> ${PN}-${PV}.tar.gz"
+#SRC_URI="https://github.com/yyyar/gobetween/releases/download/${PV}/gobetween_${PV}_linux_amd64.tar.gz -> ${PN}-${PV}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -26,10 +27,13 @@ pkg_setup() {
 
 src_compile() {
     echo ${WORKDIR}
-    export GOPATH="${WORKDIR}/${P}"
+    #export GOPATH="${WORKDIR}/${P}"
     export PREFIX="${S}/${PN}"
-	emake deps
-    emake build
+	git config --global --unset http.proxy
+	git config --global --unset https.proxy
+	#emake deps
+    #emake build
+	go build -v
 }
 
 src_install() {
